@@ -1,0 +1,409 @@
+/* IWC Homepage Custom CSS */
+/* AUTHOR: Jen@indiewebconsulting.com */
+@import url("https://fonts.googleapis.com/css?family=Cabin|Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://unpkg.com/aos@2.3.0/dist/aos.css");
+/* Variables */
+/* Variables */
+/* IWC Homepage Custom CSS */
+/* AUTHOR: Jen@indiewebconsulting.com */
+/* Navigation */
+.nav-toggle {
+  position: fixed;
+  opacity: .8;
+  z-index: 99;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  margin: 2em auto 0 2em;
+  animation-duration: .5s;
+  animation-name: menuRotateReturn;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
+  .nav-toggle:hover {
+    opacity: 1; }
+  .nav-toggle a {
+    color: white; }
+    .nav-toggle a:before {
+      content: " ";
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+      min-height: 50px;
+      width: 50px;
+      background-image: url(../img/menu.svg); }
+    .nav-toggle a label {
+      position: absolute;
+      margin-left: -9999px; }
+
+.nav-rotate-btn {
+  animation-duration: .5s;
+  animation-name: menuRotate; }
+
+.nav-pull {
+  transform: translateY(0); }
+
+nav {
+  background-color: rgba(16, 33, 169, 0.8);
+  z-index: 98;
+  position: fixed;
+  overflow-y: scroll;
+  min-width: 100%;
+  min-height: 90vh;
+  max-height: 90vh;
+  transform: translateY(-100%);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in; }
+  nav .social-bar {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 1em;
+    text-align: center;
+    margin-top: 3em; }
+    nav .social-bar a {
+      display: inline-block;
+      margin: 1em 0.5em;
+      transition: opacity .2s;
+      color: white;
+      text-decoration: none; }
+      nav .social-bar a:hover {
+        opacity: 0.9; }
+    nav .social-bar i {
+      padding-top: 5px;
+      border-radius: 25%;
+      height: 25px;
+      width: 25px;
+      background-color: rgba(255, 255, 255, 0.55); }
+  nav .logo {
+    width: 100%;
+    max-height: 75px;
+    text-align: right;
+    margin: 1em -1.5em;
+    position: absolute;
+    padding-top: 5px;
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6)); }
+    nav .logo img {
+      width: 75px;
+      height: 75px; }
+  nav .links {
+    width: 100%;
+    text-align: center;
+    margin-left: 0; }
+    @media (min-width: 576px) {
+      nav .links {
+        margin-left: 2%; } }
+    @media (min-width: 992px) {
+      nav .links {
+        margin-left: 5%; } }
+    nav .links .container {
+      overflow-y: scroll; }
+    nav .links .link {
+      transition: opacity .2s;
+      -webkit-transition: opacity .2s;
+      height: 3em;
+      width: 15%;
+      margin: 5vh 2vh;
+      text-align: center;
+      text-shadow: 2px 2px 2px black;
+      display: inline-flex; }
+      nav .links .link:hover {
+        opacity: 0.8; }
+      nav .links .link a {
+        display: inline-block;
+        color: white; }
+        nav .links .link a:before {
+          margin: 0 auto;
+          display: inherit;
+          content: " ";
+          width: 50px;
+          height: 50px;
+          min-height: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6)); }
+        nav .links .link a:hover {
+          color: white;
+          cursor: hand;
+          cursor: pointer;
+          text-decoration: underline; }
+      nav .links .link:last-child a {
+        margin-left: 0.3em; }
+    nav .links #NavAbout a:before {
+      background-image: url(../img/about.svg); }
+    nav .links #NavContact a:before {
+      background-image: url(../img/contact.svg); }
+    nav .links #NavServices a:before {
+      background-image: url(../img/services.svg); }
+    nav .links #NavOurWork a:before {
+      background-image: url(../img/work.svg); }
+    nav .links #NavPricing a:before {
+      background-image: url(../img/pricing.svg); }
+    nav .links #NavCalendar a:before {
+      background-image: url(../img/calendar.svg); }
+    nav .links #NavPrivacy a:before {
+      background-image: url(../img/privacy.svg); }
+    nav .links #NavBlog a:before {
+      background-image: url(../img/blog.svg); }
+    nav .links #NavTips a:before {
+      background-image: url(../img/tips.svg); }
+
+/* Animation Behaviors */
+@keyframes menuRotate {
+  0% {
+    transform: rotate(90deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@keyframes menuRotateReturn {
+  100% {
+    transform: rotate(90deg); } }
+
+.page-card.card-1 {
+  background-image: url("../img/sky-night-person-20.jpg");
+  background-position-y: 35%;
+  background-size: cover; }
+  @media (min-width: 576px) {
+    .page-card.card-1 {
+      background-image: url("../img/sky-night-person-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-1 {
+      background-image: url("../img/sky-night-person-80.jpg"); } }
+
+.page-card.card-2 {
+  background-image: url("../img/mountains-20.jpg");
+  background-position-y: 35%; }
+  .page-card.card-2 .card-body {
+    background-color: rgba(85, 39, 144, 0.55); }
+    .page-card.card-2 .card-body h1:before {
+      background-image: url("../img/about.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-2 {
+      background-image: url("../img/mountains-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-2 {
+      background-image: url("../img/mountains-80.jpg"); } }
+
+.page-card.card-3 {
+  background-image: url("../img/bamboo-20.jpg"); }
+  .page-card.card-3 .card-body {
+    background-color: rgba(110, 54, 18, 0.55); }
+    .page-card.card-3 .card-body h1:before {
+      background-image: url("../img/services.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-3 {
+      background-image: url("../img/bamboo-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-3 {
+      background-image: url("../img/bamboo-80.jpg"); } }
+
+.page-card.card-4 {
+  background-image: url("../img/forrest-20.jpg");
+  background-position-y: 25%; }
+  .page-card.card-4 .card-body {
+    background-color: rgba(2, 97, 234, 0.55); }
+    .page-card.card-4 .card-body h1:before {
+      background-image: url("../img/work.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-4 {
+      background-image: url("../img/forrest-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-4 {
+      background-image: url("../img/forrest-80.jpg"); } }
+
+.page-card.card-5 {
+  background-image: url("../img/sky-sepia-20.jpg");
+  background-size: 200%; }
+  .page-card.card-5 .card-body {
+    background-color: rgba(110, 54, 18, 0.55); }
+    .page-card.card-5 .card-body h1:before {
+      background-image: url("../img/pricing.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-5 {
+      background-image: url("../img/sky-sepia-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-5 {
+      background-image: url("../img/sky-sepia-80.jpg"); } }
+
+.page-card.card-6 {
+  background-image: url("../img/red-apple-20.jpg"); }
+  .page-card.card-6 .card-body {
+    background-color: rgba(185, 17, 15, 0.55); }
+    .page-card.card-6 .card-body h1:before {
+      background-image: url("../img/privacy.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-6 {
+      background-image: url("../img/red-apple-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-6 {
+      background-image: url("../img/red-apple-80.jpg"); } }
+
+.page-card.card-7 {
+  background-position-y: top;
+  background-image: url("../img/dragonfly-20.jpg"); }
+  .page-card.card-7 .card-body {
+    background-color: rgba(85, 39, 144, 0.55); }
+    .page-card.card-7 .card-body h1:before {
+      background-image: url("../img/tips.svg"); }
+  @media (min-width: 576px) {
+    .page-card.card-7 {
+      background-image: url("../img/dragonfly-60.jpg"); } }
+  @media (min-width: 1200px) {
+    .page-card.card-7 {
+      background-image: url("../img/dragonfly-80.jpg"); } }
+
+body {
+  font-family: Roboto, Georgia, "Gill Sans MT", sans-serif;
+  overflow-x: hidden; }
+
+h1, h2, h3, h4 {
+  font-family: Cabin, Georgia, "Gill Sans MT", sans-serif; }
+
+.logo a {
+  cursor: pointer;
+  cursor: hand; }
+  .logo a:hover {
+    opacity: .8; }
+
+/* Homepage Heading */
+header {
+  margin: 50% 15%;
+  min-height: 8em;
+  min-width: 50%;
+  background-color: rgba(255, 255, 255, 0.55);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  display: grid;
+  position: relative;
+  border-radius: 1em;
+  text-align: center; }
+  @media (min-width: 576px) {
+    header {
+      margin: 35% 25%; } }
+  @media (min-width: 992px) {
+    header {
+      margin: 25% 15%; } }
+  @media (min-width: 1200px) {
+    header {
+      margin: 15% 15%; } }
+  header .logo {
+    width: 125px;
+    margin: 1em auto 0; }
+  header h1.heading {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #0D2A56;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); }
+  header p.subheading {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 0px 2px 4px black; }
+
+.page-card {
+  background-repeat: no-repeat;
+  background-position: center 99%;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  z-index: 1;
+  position: absolute;
+  background-size: auto; }
+  @media (min-width: 576px) {
+    .page-card {
+      font-size: 125%; } }
+  .page-card .card-body {
+    padding: 1em 1em;
+    margin: 6em 1em 0;
+    border-radius: 2em;
+    min-height: 72vh;
+    max-height: 72vh;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    display: block; }
+    .page-card .card-body p {
+      margin-bottom: .5rem; }
+    .page-card .card-body article {
+      overflow-y: scroll;
+      display: block;
+      min-width: 15%;
+      margin: 1em 2em;
+      min-width: 25%; }
+    .page-card .card-body h1 {
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+      width: 100%; }
+      .page-card .card-body h1:before {
+        content: " ";
+        filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6));
+        display: inherit;
+        width: 50px;
+        height: 50px;
+        min-height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0.5em auto;
+        background-image: url("../img/icon.png"); }
+    .page-card .card-body .container {
+      padding: 1em 0;
+      display: block;
+      position: relative;
+      overflow-y: scroll;
+      max-height: 71vh; }
+  .page-card .bottom-title {
+    position: absolute;
+    bottom: 10%;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%; }
+    .page-card .bottom-title img {
+      filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6)); }
+      @media (max-width: 575px) {
+        .page-card .bottom-title img {
+          width: 75%; } }
+      @media (min-width: 576px) {
+        .page-card .bottom-title img {
+          width: 50%; } }
+      @media (min-width: 992px) {
+        .page-card .bottom-title img {
+          width: 35%; } }
+      @media (min-width: 1200px) {
+        .page-card .bottom-title img {
+          width: 25%; } }
+
+/* Bottom  */
+.card-bottom {
+  background-color: #6e3612;
+  position: absolute;
+  bottom: 0;
+  min-height: 10vh;
+  max-height: 10vh;
+  width: 100%;
+  margin: 0; }
+  .card-bottom .divider {
+    width: 100%;
+    min-height: 1em;
+    max-height: 1em;
+    display: flex;
+    background-image: url("../img/divider.svg");
+    filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.6)); }
+  .card-bottom .btn-next {
+    cursor: hand;
+    cursor: pointer;
+    transition: opacity .2s;
+    -webkit-transition: opacity .2s;
+    width: 100%;
+    display: flex;
+    margin: 0 auto; }
+    .card-bottom .btn-next img {
+      margin: 0 auto;
+      height: 8vh;
+      animation: shadow-pulse 1s 5 forwards; }
+
+@keyframes shadow-pulse {
+  0% {
+    filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, 0.6)); }
+  100% {
+    filter: drop-shadow(0px 0px 55px black); } }

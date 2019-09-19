@@ -1,0 +1,196 @@
+
+ /* IWC Homepage Custom CSS */
+ /* AUTHOR: Jen@indiewebconsulting.com */
+
+ /* Navigation */
+
+.nav-toggle {
+    position: fixed;
+    opacity: .8;
+    z-index: 99;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    margin: 2em auto 0 2em;
+    animation-duration: .5s;
+    animation-name: menuRotateReturn; 
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    &:hover {
+      opacity: 1;
+    } 
+    a {
+        color: white;
+        &:before {
+            content: " ";
+            display: block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: $imageShadow;
+            min-height: 50px;
+            width: 50px;
+            background-image: url(../img/menu.svg);
+        }
+        label {
+            position: absolute;
+            margin-left: -9999px;
+        }
+    }
+}
+
+.nav-rotate-btn {
+    animation-duration: .5s;
+    animation-name: menuRotate;  
+}
+
+.nav-pull {
+    transform: translateY(0);
+}
+
+nav {
+    background-color: $navBlue;
+    z-index: 98;
+    position: fixed;
+    overflow-y: scroll;
+    min-width: 100%;
+    min-height: 90vh;
+    max-height: 90vh;
+    transform: translateY(-100%);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    .social-bar {
+      background-color: $navDark;
+      border-radius: $contentBorderRadius;
+      text-align: center;
+      margin-top: 3em;
+      a {
+        display: inline-block;
+        margin: 1em 0.5em;
+        transition: opacity .2s;
+        &:hover {
+          opacity: 0.9;
+        }
+        color: white;
+        text-decoration: none;
+      }
+      i {
+        padding-top: 5px;
+        border-radius: 25%;
+        height: 25px;
+        width: 25px;
+        background-color: $bodyThemeLight;
+      }
+    }
+    .logo {
+        width: 100%;
+        max-height: 75px;
+        text-align: right;
+        margin: 1em -1.5em;
+        position: absolute;
+        padding-top: 5px;
+        filter: $imageShadow;
+        img {
+            width: 75px;
+            height: 75px;
+
+        }
+    }
+    .links {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        @include tablet-up {
+          margin-left: 2%;
+        }
+        @include netbook-up {
+          margin-left: 5%;
+        }
+
+        .container {
+          overflow-y: scroll;
+        }
+        .link {
+          transition: opacity .2s;
+          -webkit-transition: opacity .2s;
+          height: 3em;
+          width: 15%;
+          margin: 5vh 2vh;
+          text-align: center;
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+          display: inline-flex;
+          &:hover {
+            opacity: 0.8;
+          }
+          a {
+            display: inline-block;
+            &:before {
+              margin: 0 auto;
+              display: inherit;
+              content: " ";
+              width: 50px;
+              height: 50px;
+              min-height: 100%;
+              background-repeat: no-repeat;
+              background-size: cover; 
+              filter: $imageShadow;
+            }
+            color: white;
+            &:hover {
+              color: white;
+              cursor: hand;
+              cursor: pointer;
+              text-decoration: underline;
+            }
+          }
+          &:last-child {
+            a {
+              margin-left: 0.3em;
+            }
+          }
+        }
+
+        #NavAbout a:before {
+            background-image: url(../img/about.svg);
+        }
+        #NavContact a:before {
+            background-image: url(../img/contact.svg);
+        }
+        #NavServices a:before {
+            background-image: url(../img/services.svg);
+        }
+        #NavOurWork a:before {
+            background-image: url(../img/work.svg);
+        }
+        #NavPricing a:before {
+            background-image: url(../img/pricing.svg);
+        }
+        #NavCalendar a:before {
+            background-image: url(../img/calendar.svg);
+        }
+        #NavPrivacy a:before {
+            background-image: url(../img/privacy.svg);
+        }
+        #NavBlog a:before {
+            background-image: url(../img/blog.svg);
+        }
+        #NavTips a:before {
+            background-image: url(../img/tips.svg);
+        }
+    }
+}
+
+/* Animation Behaviors */
+@keyframes menuRotate {
+    0% {
+        transform: rotate(90deg);  
+    }
+    100% {
+        transform: rotate(0deg);  
+    }
+}
+
+@keyframes menuRotateReturn {
+    100% {
+        transform: rotate(90deg);  
+    }
+}

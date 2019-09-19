@@ -1,0 +1,78 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "aos": "^2.3.4",
+    "apache-server-configs": "^3.2.1",
+    "archiver": "^3.1.1",
+    "bootstrap": "^4.3.1",
+    "browserify": "^16.5.0",
+    "del": "^5.1.0",
+    "eslint": "^5.16.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "glob": "^7.1.4",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-jscs": "^4.1.0",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "jquery": "3.4.1",
+    "main.css": "2.0.0",
+    "mocha": "^5.2.0",
+    "modernizr": "3.7.1",
+    "normalize.css": "8.0.1",
+    "ssri": "^6.0.1",
+    "strip-json-comments": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=3"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
+  "h5bp-configs": {
+    "directories": {
+      "archive": "archive",
+      "dist": "dist",
+      "src": "src",
+      "test": "test"
+    }
+  },
+  "homepage": "https://html5boilerplate.com/",
+  "license": "MIT",
+  "name": "html5-boilerplate",
+  "scripts": {
+    "build": "gulp build",
+    "test": "gulp archive && mocha --require @babel/register --reporter spec --timeout 5000"
+  },
+  "version": "7.2.0",
+  "description": "A professional front-end template for building fast, robust, and adaptable web apps or sites.",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE.txt",
+    "package.json",
+    "dist/",
+    "modernizr-config.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h5bp/html5-boilerplate.git"
+  },
+  "dependencies": {}
+}

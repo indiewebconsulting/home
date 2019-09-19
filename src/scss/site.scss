@@ -1,0 +1,247 @@
+
+ /* IWC Homepage Custom CSS */
+ /* AUTHOR: Jen@indiewebconsulting.com */
+ @import url('https://fonts.googleapis.com/css?family=Cabin|Roboto&display=swap');
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+ @import url('https://unpkg.com/aos@2.3.0/dist/aos.css');
+
+ /* Variables */
+$bodyFont: Roboto, Georgia, 'Gill Sans MT', sans-serif;
+$headingFont: Cabin, Georgia, 'Gill Sans MT', sans-serif;
+$contentBorderRadius: 1em;
+$textShadow: 0px 1px 2px rgba(0,0,0,0.2);
+$textShadowHeading: 0px 2px 4px rgba(0,0,0,1);
+$imageShadow: drop-shadow(0px 5px 4px rgba(0,0,0,0.6));
+$solidBrown: rgba(110,54,18,1);
+$bodyThemeBlue: rgba(2,97,234,.55);
+$bodyThemeYellow: rgba(226,174,21,.55);
+$bodyThemeGreen: rgba(19, 224, 0, 0.55);
+$bodyThemeRed: rgba(185,17,15,.55);
+$bodyThemePurple: rgba(85,39,144,.55);
+$bodyThemeDark: rgba(0, 0, 0, 0.55);
+$bodyThemeLight:  rgba(255,255,255,0.55);
+$bodyThemeBrown: rgba(110,54,18,0.55);
+$navBlue: rgba(16,33,169,.8);
+$navDark: rgba(0,0,0,0.25);
+$white: rgba(255,255,255,1);
+ 
+@mixin phone-only {
+    @media (max-width: 575px) { @content; }
+}
+@mixin phone-portrait {
+    @media (max-width: 575px) and (orientation: portrait) { @content; }
+}
+@mixin phone-landscape {
+    @media (max-width: 575px) and (orientation: landscape) { @content; }
+}
+@mixin tablet-up {
+    @media (min-width: 576px) { @content; }
+}
+@mixin tablet-large-up {
+    @media (min-width: 768px) { @content; }
+}
+@mixin tablet-portrait-up {
+    @media (min-width: 576px) and (orientation: portrait) { @content; }
+}
+@mixin tablet-landscape-up {
+    @media (min-width: 768px) and (orientation: landscape) { @content; }
+}
+@mixin netbook-up {
+    @media (min-width: 992px) { @content; }
+}
+@mixin desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+
+@import 'mixins.scss';
+@import 'site-nav.scss';
+@import 'cards.scss';
+
+body {
+    font-family: $bodyFont;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: $headingFont;
+}
+
+.logo a {
+    cursor: pointer;
+    cursor: hand;
+    &:hover {
+        opacity: .8;
+    }
+}
+
+/* Homepage Heading */
+header {
+    margin: 50% 15%;
+    min-height: 8em;
+    min-width: 50%;
+    background-color: $bodyThemeLight;
+    text-shadow: $textShadow;
+    padding: 1%;
+    display: grid;
+    position: relative;
+    border-radius: $contentBorderRadius;
+    text-align: center;
+    @include tablet-up { 
+        margin: 35% 25%;
+    }
+    @include netbook-up {
+        margin: 25% 15%;
+    }
+    @include desktop-up {
+        margin: 15% 15%;
+    }
+    .logo {
+        width: 125px;
+        margin: 1em auto 0;
+    }
+    h1.heading {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #0D2A56;
+        text-shadow: $textShadow;
+    }
+    p.subheading {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: $white;
+        text-shadow: $textShadowHeading;
+    }
+}
+
+.page-card {
+    background-repeat: no-repeat;
+    background-position: center 99%;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    max-height: 100vh;
+    min-width: 100vw;
+    z-index: 1;
+    position: absolute;
+    background-size: auto;
+    @include phone-only {
+    }
+    @include tablet-up {
+        font-size: 125%;
+    }
+    @include netbook-up {
+    }
+    .card-body {
+        padding: 1em 1em;
+        margin: 6em 1em 0;
+        border-radius: $contentBorderRadius*2;
+        min-height: 72vh;
+        max-height: 72vh;
+        overflow-y: scroll;
+        background-color: $bodyThemeDark;
+        color: white;
+        display: block;
+        p {
+            margin-bottom: .5rem;
+        }
+        article {
+            overflow-y: scroll;
+            display: block;
+            min-width: 15%;
+            margin: 1em 2em;
+            min-width: 25%;
+        }
+        h1 {
+            text-align: center;
+            text-shadow: $textShadow;
+            width: 100%;
+            &:before {
+                content: " ";
+                filter: $imageShadow;
+                display: inherit;
+                width: 50px;
+                height: 50px;
+                min-height: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0.5em auto;
+                background-image: url("../img/icon.png");
+            }
+        }
+        .container {
+            padding: 1em 0;
+            display: block;
+            position: relative;
+            overflow-y: scroll;
+            max-height: 71vh;
+        }
+    }
+    .bottom-title {
+        position: absolute;
+        bottom: 10%;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+        img {
+            filter: $imageShadow;
+            @include phone-only {
+                width: 75%;
+            }
+            @include tablet-up {
+                width: 50%;
+            }
+            @include netbook-up {
+                width: 35%;
+            }
+            @include desktop-up {
+                width: 25%;
+            }
+        }
+    }
+}
+
+/* Bottom  */
+.card-bottom {
+    background-color: $solidBrown;
+    position: absolute;
+    bottom: 0;
+    min-height: 10vh;
+    max-height: 10vh;
+    width: 100%;
+    margin: 0;
+    .divider {
+        width: 100%;
+        min-height: 1em;
+        max-height: 1em;
+        display: flex;
+        background-image: url("../img/divider.svg");
+        filter: $imageShadow;
+    }
+    .btn-next {
+        cursor: hand;
+        cursor: pointer;
+        transition: opacity .2s;
+        -webkit-transition: opacity .2s;
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        img {
+            margin: 0 auto;
+            height: 8vh;
+            animation: shadow-pulse 1s 5 forwards;
+        }
+    }
+}
+
+@keyframes shadow-pulse
+{
+  0% {
+    filter: drop-shadow(0px 0px 0px rgba(255, 255, 255, .6));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 55px rgba(0, 0, 0, 1));
+  }
+}

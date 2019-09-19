@@ -1,0 +1,140 @@
+.page-card {
+  &.card-1 {
+    background-image: url("../img/sky-night-person-20.jpg");
+    background-position-y: 35%;
+    background-size: cover;
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/sky-night-person-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/sky-night-person-80.jpg");
+    } 
+  }
+  &.card-2 {
+    background-image: url("../img/mountains-20.jpg");
+    background-position-y: 35%;
+    .card-body {
+        background-color: $bodyThemePurple;
+        h1 {
+          &:before {
+            background-image: url("../img/about.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+        background-image: url("../img/mountains-60.jpg");
+    }
+    @include desktop-up {
+        background-image: url("../img/mountains-80.jpg");
+    }
+  }
+  &.card-3 {
+    background-image: url("../img/bamboo-20.jpg");
+    .card-body {
+        background-color: $bodyThemeBrown;
+        h1 {
+          &:before {
+            background-image: url("../img/services.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/bamboo-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/bamboo-80.jpg");
+    }
+  }
+  &.card-4 {
+    background-image: url("../img/forrest-20.jpg");
+    background-position-y: 25%;
+    .card-body {
+        background-color: $bodyThemeBlue;
+        h1 {
+          &:before {
+            background-image: url("../img/work.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/forrest-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/forrest-80.jpg");
+    }
+  }
+  &.card-5 {
+    background-image: url("../img/sky-sepia-20.jpg");
+    background-size: 200%;
+    .card-body {
+        background-color: $bodyThemeBrown;
+        h1 {
+          &:before {
+            background-image: url("../img/pricing.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/sky-sepia-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/sky-sepia-80.jpg");
+    }
+  }
+  &.card-6 {
+    background-image: url("../img/red-apple-20.jpg");
+    .card-body {
+        background-color: $bodyThemeRed;
+        h1 {
+          &:before {
+            background-image: url("../img/privacy.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/red-apple-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/red-apple-80.jpg");
+    }
+  }
+  &.card-7 {
+    background-position-y: top;
+    background-image: url("../img/dragonfly-20.jpg");
+    .card-body {
+        background-color: $bodyThemePurple;
+        h1 {
+          &:before {
+            background-image: url("../img/tips.svg");
+          }
+        }
+    }
+    @include phone-only {
+
+    }
+    @include tablet-up {
+      background-image: url("../img/dragonfly-60.jpg");
+    }
+    @include desktop-up {
+      background-image: url("../img/dragonfly-80.jpg");
+    }
+  }
+}
