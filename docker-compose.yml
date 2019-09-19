@@ -1,0 +1,10 @@
+version: "3"
+services:
+  webapp:
+    image: nginx:alpine
+    ports:
+      - 8181:80
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    container_name: iwchome
+    restart: unless-stopped

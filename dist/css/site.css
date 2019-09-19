@@ -73,6 +73,7 @@ nav {
   z-index: 98;
   position: fixed;
   overflow-y: scroll;
+  overflow-x: hidden;
   min-width: 100%;
   min-height: 90vh;
   max-height: 90vh;
