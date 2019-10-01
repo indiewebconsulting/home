@@ -368,7 +368,7 @@ header {
     .page-card {
       font-size: 125%; } }
   .page-card .card-body {
-    padding: 1em 1em;
+    padding: 1em 0.5em;
     margin: 8em 1em 0;
     border-radius: 2em;
     min-height: 75%;
@@ -381,7 +381,7 @@ header {
     .page-card .card-body article {
       display: block;
       min-width: 15%;
-      margin: 1em 2em;
+      margin: 1em 1em;
       min-width: 25%; }
     .page-card .card-body h1 {
       text-align: center;
