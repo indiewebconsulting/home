@@ -13,6 +13,7 @@ $textShadow: 0px 1px 2px rgba(0,0,0,0.2);
 $textShadowHeading: 0px 2px 4px rgba(0,0,0,1);
 $imageShadow: drop-shadow(0px 5px 4px rgba(0,0,0,0.6));
 $solidBrown: rgba(110,54,18,1);
+$TransBrownEighty: rgba(110,54,18,0.8);
 $bodyThemeBlue: rgba(2,97,234,.55);
 $bodyThemeYellow: rgba(226,174,21,.55);
 $bodyThemeGreen: rgba(19, 224, 0, 0.55);
@@ -56,6 +57,10 @@ $white: rgba(255,255,255,1);
     @media (min-width: 1800px) { @content; }
 }
 
+@import 'mixins.scss';
+@import 'site-nav.scss';
+@import 'cards.scss';
+
 /* width */
 ::-webkit-scrollbar {
     background: rgba(255,255,255,0.2);
@@ -85,9 +90,10 @@ $white: rgba(255,255,255,1);
     background: rgba(255,255,255,0.2);
 }
 
-@import 'mixins.scss';
-@import 'site-nav.scss';
-@import 'cards.scss';
+html {
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
 
 body {
     font-family: $bodyFont;
@@ -131,44 +137,45 @@ header {
         width: 125px;
         margin: 1em auto 0;
     }
-    h1.heading {
-        font-size: 1.4em;
+    .heading {
         font-weight: bold;
         color: #0D2A56;
-        text-shadow: $textShadow;
+        filter: $imageShadow;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
     }
     p.subheading {
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 2vh;
+        height: auto;
+        max-width: 100%;
         color: $white;
-        text-shadow: $textShadowHeading;
+        text-shadow: $textShadowHeading; 
     }
 }
 
 .page-card {
-    background-repeat: no-repeat;
     background-position: center 99%;
     background-size: cover;
-    background-attachment: fixed;
+    background-repeat: no-repeat;
     min-height: 100vh;
     max-height: 100vh;
     min-width: 100vw;
     z-index: 1;
     position: absolute;
-    background-size: auto;
     @include phone-only {
+
     }
     @include tablet-up {
         font-size: 125%;
     }
-    @include netbook-up {
-    }
     .card-body {
         padding: 1em 1em;
-        margin: 6em 1em 0;
+        margin: 8em 1em 0;
         border-radius: $contentBorderRadius*2;
-        min-height: 72vh;
-        max-height: 72vh;
+        min-height: 75%;
+        max-height: 75%;
         background-color: $bodyThemeDark;
         color: white;
         display: block;
@@ -202,10 +209,12 @@ header {
         .container {
             padding: 0;
             display: block;
-            position: relative;
-            max-height: 65vh;
+            max-height: 70vh;
             overflow-y: auto;
             overflow-x: hidden;
+        }
+        @include phone-only {
+            margin-top: 8em;
         }
     }
     .bottom-title {
@@ -228,39 +237,6 @@ header {
             @include desktop-up {
                 width: 25%;
             }
-        }
-    }
-}
-
-/* Bottom  */
-.card-bottom {
-    background-color: $solidBrown;
-    position: absolute;
-    bottom: 0;
-    min-height: 10vh;
-    max-height: 10vh;
-    width: 100%;
-    margin: 0;
-    .divider {
-        width: 100%;
-        min-height: 1em;
-        max-height: 1em;
-        display: flex;
-        background-image: url("../img/divider.svg");
-        filter: $imageShadow;
-    }
-    .btn-next {
-        cursor: hand;
-        cursor: pointer;
-        transition: opacity .2s;
-        -webkit-transition: opacity .2s;
-        width: 100%;
-        display: flex;
-        margin: 0 auto;
-        img {
-            margin: 0 auto;
-            height: 8vh;
-            animation: shadow-pulse 1s 5 forwards;
         }
     }
 }

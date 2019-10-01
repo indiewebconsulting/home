@@ -8,3 +8,8 @@ services:
       - ./dist:/usr/share/nginx/html
     container_name: iwchome
     restart: unless-stopped
+
+networks:
+  default:
+    external: 
+      name: nginx-rtmp-php-fpm_frontend

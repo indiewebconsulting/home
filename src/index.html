@@ -5,8 +5,7 @@
   <meta charset="utf-8">
   <title></title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimal-ui">
   <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
@@ -39,11 +38,7 @@
 
   <!-- IWC Navigation -->
 
-  <div class="nav-toggle">
-      <a href="javascript:void(0);"><label>Open Navigation</label></a>
-  </div>
-
-  <nav class="container">
+  <nav class="container position-fixed">
     <div class="logo float-right">
       <a alt="logo">
         <img src="img/nav-logo.svg">
@@ -74,32 +69,43 @@
     </div> 
   </nav>  <!-- IWC Navigation -->
 
+  <div class="nav-toggle position-fixed">
+    <a href="javascript:void(0);">
+      <img alt="open navigation" 
+        class="img-fluid" src="img/menu.svg"> 
+    </a>
+  </div>
+
+  <div class="card-nav position-fixed">
+      <div class="divider"></div>
+      <div class="align-middle">
+        <a class="btn-next" href="javascript:void(0);">
+          <img alt="next card" 
+            class="img-fluid" src="img/arrow-down.svg"> 
+        </a>
+      </div>
+  </div>
+
   <!-- IWC Homepage -->
 
   <div class="page-card card-1" data-card-id=1 id="Home">
     <header data-aos="fade-up">
       <img class="logo" src="img/logo-hero.svg"/>
-      <h1 class="heading">Independent Web Consulting</h1>
-      <p class="subheading">indiewebconsulting.com</p>
+      <img class="heading" src="img/independent-web-consulting.svg" alt="Independent Web Consulting" />
+      <p class="subheading">www.indiewebconsulting.com</p>
     </header>
 
     <div class="bottom-title">
       <img src="img/heading-bottom-1.svg"/>
     </div>
 
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next" >
-          <img src="img/arrow-down.svg">
-        </a>
-    </div>
   </div><!-- Card1 -->
 
   <div class="page-card card-2 multicard" data-card-id="2" id="About">
-    <div data-aos="fade-up" class="card-body" data-card-body-id="1">
+    <div class="card-body" data-card-body-id="1">
       <div class="container">
         <article>
-          <h1>About Us 1</h1>
+          <h1 data-aos="fade-up">About Us 1</h1>
             <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
             </p>
             <p>Lucas ipsum dolor sit amet chewbacca naboo sebulba jango dooku mon binks solo jade calrissian. Jango palpatine darth tatooine windu yoda leia mon. Qui-gonn padmé mustafar leia moff dooku. Han wedge calrissian anakin obi-wan. Lars bothan twi'lek darth sith solo darth dantooine dagobah. Ewok antilles jango watto darth sidious binks. Moff skywalker leia wedge. Naboo bespin organa mothma. Padmé moff leia tatooine kessel qui-gon darth. Sebulba alderaan mace anakin tatooine luuke obi-wan moff twi'lek.
@@ -168,19 +174,14 @@
       </div>
     </div>
 -->
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">
-        </a>
-    </div>
+
   </div><!-- Card2 -->
 
 
   <div class="page-card card-3" data-card-id="3" id="Services">
-    <div data-aos="fade-up" class="card-body">
+    <div class="card-body">
       <div class="container">
-        <h1>Services</h1>
+        <h1 data-aos="fade-up">Services</h1>
         <article>
             <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
             </p>
@@ -188,87 +189,53 @@
       </div>
     </div>
 
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">
-        </a>
-    </div>
   </div><!-- Card3 -->
 
   <div class="page-card card-4" data-card-id="4" id="OurWork">
-    <div data-aos="fade-up" class="card-body">
+    <div class="card-body">
       <div class="container">
-        <h1>Our Work</h1>
+        <h1 data-aos="fade-up" >Our Work</h1>
         <article>
             <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
             </p>
         </article>
       </div>
-    </div>
-
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">
-        </a>
     </div>
   </div><!-- Card4 -->
 
   <div class="page-card card-5" data-card-id="5" id="Pricing">
-    <div data-aos="fade-up" class="card-body">
+    <div class="card-body">
       <div class="container">
-        <h1>Pricing</h1>
+        <h1 data-aos="fade-up">Pricing</h1>
         <article>
             <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
             </p>
         </article>
       </div>
-    </div>
-
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">
-        </a>
     </div>
   </div><!-- Card5 -->
 
   <div class="page-card card-6" data-card-id="6" id="Privacy">
-    <div data-aos="fade-up" class="card-body">
+    <div class="card-body">
       <div class="container">
-        <h1>Privacy</h1>
+        <h1 data-aos="fade-up">Privacy</h1>
         <article>
             <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
             </p>
         </article>
       </div>
     </div>
-
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">
-        </a>
-    </div>
   </div><!-- Card6 -->
 
   <div class="page-card card-7" data-card-id="7" id="Tips">
-    <div data-aos="fade-up" class="card-body">
+    <div class="card-body">
       <div class="container">
-          <h1>Tip Jar</h1>
+          <h1 data-aos="fade-up">Tip Jar</h1>
           <article> 
               <p>Lucas ipsum dolor sit amet grodin ackbar panaka dulok vau sesswenna sesswenna gossam sullustan ahsoka. Gorax abyssin shi'ido sola kasan wicket gordin iv. Sidious shmi givin hutt aramandi tarpals. Bespin evazan nomi jin'ha terentatek snootles tyranus klivian antilles. X1 secura ruurian yarael kathol saffa neimoidian skakoan. Palpatine ackbar zam amidala luminara falleen binks darth bertroff. Xanatos soontir charal nagai jango owen. Organa gorith offee tapani subterrel ors ruwee. Rahm roos organa lorth.
               </p>
           </article> 
       </div>
-    </div>
-  
-    <div class="card-bottom">
-        <div class="divider"></div>
-        <a class="btn-next">
-          <img src="img/arrow-down.svg">  
-        </a> 
     </div>
   </div><!-- Card7 -->   
 
@@ -284,7 +251,7 @@
       </div>
     </div>
   
-    <div class="card-bottom">
+    <div class="card-nav">
         <div class="divider"></div>
         <a class="btn-next">
           <img src="img/arrow-down.svg">  

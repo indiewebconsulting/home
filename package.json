@@ -50,17 +50,20 @@
       "archive": "archive",
       "dist": "dist",
       "src": "src",
-      "test": "test"
+      "test": "test",
+      "build": "build"
     }
   },
-  "homepage": "https://html5boilerplate.com/",
+  "homepage": "http://git.indiewebconsulting.com/home",
   "license": "MIT",
-  "name": "html5-boilerplate",
+  "name": "homepage-boilerplate",
   "scripts": {
     "build": "gulp build",
+    "release": "gulp release",
+    "watch": "gulp watch",
     "test": "gulp archive && mocha --require @babel/register --reporter spec --timeout 5000"
   },
-  "version": "7.2.0",
+  "version": "0.8.1",
   "description": "A professional front-end template for building fast, robust, and adaptable web apps or sites.",
   "files": [
     "CHANGELOG.md",
@@ -72,7 +75,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/h5bp/html5-boilerplate.git"
+    "url": "http://git.indiewebconsulting.com/home.git"
   },
   "dependencies": {}
 }

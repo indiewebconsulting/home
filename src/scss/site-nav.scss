@@ -2,34 +2,60 @@
  /* IWC Homepage Custom CSS */
  /* AUTHOR: Jen@indiewebconsulting.com */
 
- /* Navigation */
+ /* Card Navigation  */
+.card-nav {
+  position: fixed;
+  text-align: center;
+  z-index: 90;
+  margin-top: 0;
+  top: 0;
+  width: 100%;
+  background-color: $TransBrownEighty;
+  .divider {
+      width: 100%;
+      min-height: 1em;
+      max-height: 1em;
+      display: flex;
+      background-image: url("../img/divider.svg");
+      filter: $imageShadow;
+  }
+  .btn-next {
+      cursor: hand;
+      cursor: pointer;
+      margin: 1em 0;
+      display: block;
+      transition: opacity .2s;
+      -webkit-transition: opacity .2s;
+      width: 100%;
+      img {
+          animation: shadow-pulse 1s 5 forwards;
+          height: 1.5em;
+      }
+  }
+}
 
+ /* Navigation */
 .nav-toggle {
-    position: fixed;
-    opacity: .8;
+    opacity: 1;
     z-index: 99;
-    height: 50px;
-    width: 50px;
     text-align: center;
-    margin: 2em auto 0 2em;
     animation-duration: .5s;
     animation-name: menuRotateReturn; 
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    top: 1.5em;
+    left: 1em;
     &:hover {
-      opacity: 1;
+      opacity: 0.8;
     } 
     a {
         color: white;
-        &:before {
-            content: " ";
-            display: block;
-            background-size: cover;
-            background-repeat: no-repeat;
-            filter: $imageShadow;
-            min-height: 50px;
-            width: 50px;
-            background-image: url(../img/menu.svg);
+        width: 100%;
+        margin: auto;
+        img {
+          filter: $imageShadow;
+          height: 2em;
+          width: 2em;
         }
         label {
             position: absolute;
@@ -50,7 +76,6 @@
 nav {
     background-color: $navBlue;
     z-index: 98;
-    position: fixed;
     overflow-y: scroll;
     overflow-x: hidden;
     min-width: 100%;

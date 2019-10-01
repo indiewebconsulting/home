@@ -38,6 +38,7 @@
     background-image: url("../img/bamboo-20.jpg");
     .card-body {
         background-color: $bodyThemeBrown;
+        background-size: cover;
         h1 {
           &:before {
             background-image: url("../img/services.svg");

@@ -63,16 +63,24 @@ gulp.task('archive:zip', (done) => {
 gulp.task('clean', (done) => {
   del([
     dirs.archive,
-    dirs.dist
+    dirs.build
   ]).then(() => {
     done();
   });
 });
 
+gulp.task('release:to_dist', () =>
+  gulp.src([
+    // Copy all files
+    `${dirs.build}/**/*`,
+  ])
+  .pipe(gulp.dest(dirs.dist))
+);
+
 gulp.task('copy:.htaccess', () =>
   gulp.src('node_modules/apache-server-configs/dist/.htaccess')
     .pipe(plugins().replace(/# ErrorDocument/g, 'ErrorDocument'))
-    .pipe(gulp.dest(dirs.dist))
+    .pipe(gulp.dest(dirs.build))
 );
 
 gulp.task('copy:index.html', () => {
@@ -88,18 +96,18 @@ gulp.task('copy:index.html', () => {
     .pipe(plugins().replace(/{{JQUERY_VERSION}}/g, version))
     .pipe(plugins().replace(/{{MODERNIZR_VERSION}}/g, modernizrVersion))
     .pipe(plugins().replace(/{{JQUERY_SRI_HASH}}/g, hash.toString()))
-    .pipe(gulp.dest(dirs.dist));
+    .pipe(gulp.dest(dirs.build));
 });
 
 gulp.task('copy:jquery', () =>
   gulp.src(['node_modules/jquery/dist/jquery.min.js'])
     .pipe(plugins().rename(`jquery-${pkg.devDependencies.jquery}.min.js`))
-    .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
+    .pipe(gulp.dest(`${dirs.build}/js/vendor`))
 );
 
 gulp.task('copy:license', () =>
   gulp.src('LICENSE.txt')
-    .pipe(gulp.dest(dirs.dist))
+    .pipe(gulp.dest(dirs.build))
 );
 
 gulp.task('copy:main.css', () => {
@@ -110,7 +118,7 @@ gulp.task('copy:main.css', () => {
     .pipe(plugins().autoprefixer({
       cascade: false
     }))
-    .pipe(gulp.dest(`${dirs.dist}/css`));
+    .pipe(gulp.dest(`${dirs.build}/css`));
 });
 
 gulp.task('copy:misc', () =>
@@ -127,32 +135,32 @@ gulp.task('copy:misc', () =>
   ], {
     // Include hidden files by default
     dot: true
-  }).pipe(gulp.dest(dirs.dist))
+  }).pipe(gulp.dest(dirs.build))
 );
 
 gulp.task('copy:normalize', () =>
   gulp.src('node_modules/normalize.css/normalize.css')
-    .pipe(gulp.dest(`${dirs.dist}/css`))
+    .pipe(gulp.dest(`${dirs.build}/css`))
 );
 
 gulp.task('modernizr', (done) => {
   modernizr.build(modernizrConfig, (code) => {
-    fs.writeFile(`${dirs.dist}/js/vendor/modernizr-${pkg.devDependencies.modernizr}.min.js`, code, done);
+    fs.writeFile(`${dirs.build}/js/vendor/modernizr-${pkg.devDependencies.modernizr}.min.js`, code, done);
   });
 });
 
 gulp.task('copy:aos', () =>
   gulp.src('node_modules/aos/dist/aos.css')
-    .pipe(gulp.dest(`${dirs.dist}/css`)) 
+    .pipe(gulp.dest(`${dirs.build}/css`)) 
   && gulp.src('node_modules/aos/dist/aos.js')
-    .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
+    .pipe(gulp.dest(`${dirs.build}/js/vendor`))
 );
 
 gulp.task('copy:bootstrap', () =>
   gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-    .pipe(gulp.dest(`${dirs.dist}/css`)) 
+    .pipe(gulp.dest(`${dirs.build}/css`)) 
   && gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')
-    .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
+    .pipe(gulp.dest(`${dirs.build}/js/vendor`))
 );
 
 gulp.task('lint:js', () =>
@@ -169,7 +177,7 @@ gulp.task('lint:js', () =>
 gulp.task('sass', () =>
   gulp.src(`${dirs.src}/scss/site.scss`)
     .pipe(sass()) // Using gulp-sass
-    .pipe(gulp.dest(`${dirs.dist}/css`))
+    .pipe(gulp.dest(`${dirs.build}/css`))
 );
 
 // ---------------------------------------------------------------------
@@ -197,6 +205,13 @@ gulp.task(
     'sass',
     'copy',
     'modernizr',
+  )
+);
+
+gulp.task(
+  'release',
+  gulp.series(
+    'release:to_dist'
   )
 );
 

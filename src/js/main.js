@@ -1,5 +1,20 @@
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
 $( document ).ready(function() {
- 
+  var arCardYindex = [];
+  // An array of y coordinates of cards
+
+
+  /**
+   * FUNCTION scrollToCard
+   * @param {*} cardId 
+   */
   function scrollToCard(cardId = 1) {
     if( !parseInt(cardId, 10) ) {
       console.log('Card ID is not a valid integer');
@@ -29,19 +44,24 @@ $( document ).ready(function() {
     $('nav').toggleClass('nav-pull');
   });
 
-  $('.page-card').each(function(){
-    var cardId = $(this).attr('data-card-id');
-    var nextCardId = parseInt(cardId,10)+1;
-    $(this).children('.card-bottom').children('.btn-next').click(function() {
-      scrollToCard(nextCardId);
-    });
+  $('.card-nav a').click(function(){
+    for(var i=0; i <= arCardYindex.length-1; i++) {
+      var top = window.pageYOffset;
+      if(top <= arCardYindex[i] - 50) {
+        scrollToCard(i+1);
+        return true;
+      } 
+    }
+    scrollToCard(1);
   });
 
   // Add a vertical position to each card/section
   $('.page-card').each(function() {
     var cardId = parseInt($(this).attr('data-card-id'),10);
-    var cardMarginTop = (cardId*100) - 100;
-    $('[data-card-id=' + cardId + ']').css('margin-top',cardMarginTop+'vh');
+    var winHeight = window.innerHeight;
+    var cardMarginTop = (winHeight * cardId) - winHeight;
+    arCardYindex.push(cardMarginTop);
+    $('[data-card-id=' + cardId + ']').css('top',((cardId*100)-100)+'vh');
   });
 
   // Reset card body content to be loaded from slide/local nav
